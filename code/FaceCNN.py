@@ -7,26 +7,26 @@ import torch.nn as nn
 
 def gaussian_weights_init(m):
     classname = m.__class__.__name__
-    # 字符串查找find，找不到返回-1，不等-1即字符串中含有该字符
+    # If a string cannot be found, -1 is returned. If the value is not equal to -1, the string contains the character
     if classname.find('Conv') != -1:
         m.weight.data.normal_(0.0, 0.04)
 
 
 def insert_FaceCNN():
     class FaceCNN(nn.Module):
-        # 初始化网络结构
+        # Initialize the network structure
         def __init__(self):
             super(FaceCNN, self).__init__()
 
-            # 第一次卷积、池化
+            # First convolution, pooling
             self.conv1 = nn.Sequential(
-                nn.Conv2d(in_channels=1, out_channels=64, kernel_size=3, stride=1, padding=1),  # 卷积层
-                nn.BatchNorm2d(num_features=64),  # 归一化
-                nn.RReLU(inplace=True),  # 激活函数
-                nn.MaxPool2d(kernel_size=2, stride=2),  # 最大值池化
+                nn.Conv2d(in_channels=1, out_channels=64, kernel_size=3, stride=1, padding=1),  # convolutional layer
+                nn.BatchNorm2d(num_features=64),  # normalization
+                nn.RReLU(inplace=True),  # activation function
+                nn.MaxPool2d(kernel_size=2, stride=2),  # Maximum pooling
             )
 
-            # 第二次卷积、池化
+            # Second convolution, pooling
             self.conv2 = nn.Sequential(
                 nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3, stride=1, padding=1),
                 nn.BatchNorm2d(num_features=128),
@@ -34,7 +34,7 @@ def insert_FaceCNN():
                 nn.MaxPool2d(kernel_size=2, stride=2),
             )
 
-            # 第三次卷积、池化
+            # The third convolution, pooling
             self.conv3 = nn.Sequential(
                 nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, stride=1, padding=1),
                 nn.BatchNorm2d(num_features=256),
@@ -42,12 +42,12 @@ def insert_FaceCNN():
                 nn.MaxPool2d(kernel_size=2, stride=2),
             )
 
-            # 参数初始化
+            # parameter initialization
             self.conv1.apply(gaussian_weights_init)
             self.conv2.apply(gaussian_weights_init)
             self.conv3.apply(gaussian_weights_init)
 
-            # 全连接层
+            # Fully connected layer
             self.fc = nn.Sequential(
                 nn.Dropout(p=0.2),
                 nn.Linear(in_features=256 * 6 * 6, out_features=4096),
@@ -60,7 +60,7 @@ def insert_FaceCNN():
                 nn.Linear(in_features=256, out_features=7),
             )
 
-        # 前向传播
+        # Forward propagation
         def forward(self, x):
             x = self.conv1(x)
             x = self.conv2(x)
