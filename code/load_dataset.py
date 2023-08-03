@@ -9,14 +9,14 @@ import os
 import cv2
 
 IMAGE_SIZE = 64
-#将输入的图像大小统一
+# The size of the input image is uniform
 def resize_image(image,height = IMAGE_SIZE,width = IMAGE_SIZE):
     top,bottom,left,right = 0,0,0,0
-    #获取图像大小
+    # Get image size
     h,w,_ = image.shape
-    #对于长宽不一的，取最大值
+    # For different lengths, take the maximum value
     longest_edge = max(h,w)
-    #计算较短的边需要加多少像素
+    # Calculate how many pixels you need to add to the shorter edge
     if h < longest_edge:
         dh = longest_edge - h
         top = dh // 2
@@ -27,23 +27,24 @@ def resize_image(image,height = IMAGE_SIZE,width = IMAGE_SIZE):
         right = dw - left
     else:
         pass
-    #定义填充颜色
+    # Define fill color
     BLACK = [0,0,0]
 
-    #给图像增加边界，使图片长、宽等长，cv2.BORDER_CONSTANT指定边界颜色由value指定
+    # Add a border to the image so that the length and width of the image are equal, 
+    # cv2.BORDER_CONSTANT specifies that the border color is specified by value.
     constant_image = cv2.copyMakeBorder(image,top,bottom,left,right,cv2.BORDER_CONSTANT,value=BLACK)
 
     return cv2.resize(constant_image,(height,width))
-#读取数据
-images = []     #数据集
-labels = []     #标注集
+# reading data
+images = []
+labels = []
 def read_path(path_name):
     for dir_item in os.listdir(path_name):
         full_path = path_name + '\\' + dir_item
         if os.path.isdir(full_path):
             read_path(full_path)
         else:
-            #判断是人脸照片
+            # It's a face photo
             if dir_item.endswith('.jpg'):
                 image = cv2.imread(full_path)
                 image = resize_image(image)
@@ -53,20 +54,20 @@ def read_path(path_name):
 
     return images,labels
 
-#为每一类数据赋予唯一的标签值
+# Assign a unique label value to each class of data
 def label_id(label,users,user_num):
     for i in range(user_num):
         if label.endswith(users[i]):
             return i
 
-#从指定位置读数据
+# Reads data from a specified location
 def load_dataset(path_name):
     users = os.listdir(path_name)
     user_num = len(users)
 
     images,labels = read_path(path_name)
     images_np = np.array(images)
-    #每个图片夹都赋予一个固定唯一的标签
+    # Each folder is assigned a fixed and unique label
     labels_np = np.array([label_id(label,users,user_num) for label in labels])
 
     return images_np,labels_np
