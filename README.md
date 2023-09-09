@@ -68,9 +68,9 @@ Run run_me.py
 
 Done!
 
-## Video Demo(CN Version)
+## Video Demo (CN Version)
 
-[<img src="https://i.imgur.com/8EQyIMv.png" width="70%">](https://youtu.be/iHXzmzJyJtw)
+[<div align=center><img src="https://i.imgur.com/8EQyIMv.png" width="70%"></div>](https://youtu.be/iHXzmzJyJtw)
 
 ## Chinese software copyright certificate
 <div align=center><img src="https://i.imgur.com/Gq8efhK.jpg" width="500"></div>
