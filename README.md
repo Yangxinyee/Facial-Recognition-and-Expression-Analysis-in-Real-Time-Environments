@@ -46,6 +46,8 @@ Through real-time monitoring and collection of patients' facial feature informat
 
 <img src="https://img-blog.csdnimg.cn/ca766efa240c416ea3792266b8c666ce.png" width="800">
 
+<img src="https://i.imgur.com/QDyYbI0.png" width="500">
+
 <img src="https://img-blog.csdnimg.cn/25df7bd1466d48a08b6f06ccfd09dd67.png" width="500">
 
 <img src="https://img-blog.csdnimg.cn/9db6e7f4fe934e359cd1fd842a7421e0.png" width="500">
