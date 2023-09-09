@@ -38,7 +38,7 @@ Through real-time monitoring and collection of patients' facial feature informat
 
 ## Process
 
-<div align=center><img src="https://i.imgur.com/8qXEmGm.png" width="70%"></div>
+<div align=center><img src="https://i.imgur.com/E88jo0I.png" width="70%"></div>
 
 ## Development Process and Demonstration
 
