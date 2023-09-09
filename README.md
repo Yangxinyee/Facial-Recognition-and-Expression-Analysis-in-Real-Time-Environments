@@ -38,19 +38,19 @@ Through real-time monitoring and collection of patients' facial feature informat
 
 ## Process
 
-<img src="https://i.imgur.com/8qXEmGm.png" width="1000">
+<div align=center><img src="https://i.imgur.com/8qXEmGm.png" width="70%"></div>
 
 ## Development Process and Demonstration
 
-<img src="https://img-blog.csdnimg.cn/2cb66536932f449cbaa615308f81ee28.png" width="800">
+<div align=center><img src="https://img-blog.csdnimg.cn/2cb66536932f449cbaa615308f81ee28.png" width="50%"></div>
 
-<img src="https://img-blog.csdnimg.cn/ca766efa240c416ea3792266b8c666ce.png" width="800">
+<div align=center><img src="https://img-blog.csdnimg.cn/ca766efa240c416ea3792266b8c666ce.png" width="50%"></div>
 
-<img src="https://i.imgur.com/QDyYbI0.png" width="500">
+<div align=center><img src="https://i.imgur.com/QDyYbI0.png" width="300"></div>
 
-<img src="https://img-blog.csdnimg.cn/25df7bd1466d48a08b6f06ccfd09dd67.png" width="500">
+<div align=center><img src="https://img-blog.csdnimg.cn/25df7bd1466d48a08b6f06ccfd09dd67.png" width="300"></div>
 
-<img src="https://img-blog.csdnimg.cn/9db6e7f4fe934e359cd1fd842a7421e0.png" width="500">
+<div align=center><img src="https://img-blog.csdnimg.cn/9db6e7f4fe934e359cd1fd842a7421e0.png" width="300"></div>
 
 ## Setup
 
