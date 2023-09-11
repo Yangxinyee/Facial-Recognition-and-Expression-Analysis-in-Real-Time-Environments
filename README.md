@@ -70,6 +70,8 @@ Done!
 
 ## Video Demo (CN Version)
 
+https://youtu.be/iHXzmzJyJtw
+
 [<div align=center><img src="https://i.imgur.com/8EQyIMv.png" width="70%"></div>](https://youtu.be/iHXzmzJyJtw)
 
 
