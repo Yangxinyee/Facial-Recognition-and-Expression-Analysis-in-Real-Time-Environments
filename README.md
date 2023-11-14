@@ -1,4 +1,4 @@
-# Facial Recognition and Behavioral Analysis in Real-Time Environments
+# Facial Recognition and Expression Analysis in Real-Time Environments
 
 Model Files can be donwloaded from BaiduNetDisk：
 
